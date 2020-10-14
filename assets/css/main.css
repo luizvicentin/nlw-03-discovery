@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@
 
 body {
   height: 100vh;
-  color: #f0f0f0;
+  color: #e6e3e3;
 }
 
 body,
