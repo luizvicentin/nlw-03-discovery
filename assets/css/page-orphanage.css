@@ -38,6 +38,10 @@ aside.sidebar footer button:hover {
   padding-left: 11rem;
 }
 
+main {
+    flex: 1;
+}
+
 /* details */
 .orphanage-details {
   width: 70rem;

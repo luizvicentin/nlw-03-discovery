@@ -25,3 +25,25 @@ L
 .marker([-27.222633, -49.6455874], { icon })
 .addTo(map)
 
+/* image galley */
+
+function selectImage(event) {
+    const button = event.currentTarget
+
+    //remove class .active
+    const buttons = document.querySelectorAll('.images button')
+    buttons.forEach(removeActiveClass)
+
+    function removeActiveClass(button) {
+        button.classList.remove('.active')
+    }
+
+    //select the img clicked 
+    const image = button.children[0]
+    const imageContainer = document.querySelector('.orphanage-details > img') 
+    // actualize the img container
+    imageContainer.src = image.src
+
+    //add class .active again
+    button.classList.add('.active')
+}
