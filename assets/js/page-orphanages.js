@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
 
 //create icon
 const icon = L.icon({
-    iconUrl: './img/map-marker.svg',
+    iconUrl: '/img/map-marker.svg',
     iconSize: [58, 68],
     iconAnchor: [29, 68],
     popupAnchor: [175, 2]
@@ -18,7 +18,7 @@ const popup = L.popup({
     className: 'map-popup',
     minWidth: 240,
     MinHeight: 240
-}).setContent('Orf. Esperança <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./img/arrow-white.svg" ></a>') 
+}).setContent('Orf. Esperança <a href="/orphanage?id=1" class="choose-orphanage"> <img src="/img/arrow-white.svg" ></a>') 
 
 // create marker
 L
