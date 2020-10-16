@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/page-orphanages.css" />
-    <link rel="stylesheet" href="/css/animation.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-    <title>Localize um orfanato | Happy</title>
-    <link rel="icon" href="/img/logo-icon.png" />
-  </head>
+<html lang="pt-br">
 
-  <body>
-    <div id="page-orphanages">
-      <aside class="animate-right">
-        <header>
-          <img src="/img/map-marker.svg" alt="Happy" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/page-orphanages.css" />
+  <link rel="stylesheet" href="/css/animation.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <title>Localize um orfanato | Happy</title>
+  <link rel="icon" href="/img/logo-icon.png" />
+</head>
 
-          <h2>Escolha um orfanato no mapa</h2>
+<body>
+  <div id="page-orphanages">
+    <aside class="animate-right">
+      <header>
+        <img src="/img/map-marker.svg" alt="Happy" />
 
-          <p>Muitas criancas estao esperando sua visita</p>
-        </header>
+        <h2>Escolha um orfanato no mapa</h2>
 
-        <footer>
-          <strong>Rio do Sul</strong>
-          <p>Santa Catarina</p>
-        </footer>
-      </aside>
+        <p>Muitas criancas estao esperando sua visita</p>
+      </header>
 
-      <div id="mapid" class="animate-appear"></div>
+      <footer>
+        <strong>Rio do Sul</strong>
+        <p>Santa Catarina</p>
+      </footer>
+    </aside>
 
-      <a href="/create-orphanage" class="create-orphanage" 
-        title="Cadastre um orfanato"
-      >
-        <img src="/img/plus.svg" alt="Criar orfanato" />
-      </a>
+    <div id="mapid" class="animate-appear"></div>
+
+    <div class="orphanages">
+      {{#each orphanages}}
+
+        <span hidden 
+          data-id="{{this.id}}" 
+          data-name="{{this.name}}" 
+          data-lat="{{this.lat}}"
+          data-lng="{{this.lng}}"
+        ></span>
+
+      {{/each}}
     </div>
-    <script src="/js/page-orphanages.js"></script>
-  </body>
+
+    <a href="/create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
+      <img src="/img/plus.svg" alt="Criar orfanato" />
+    </a>
+  </div>
+  <script src="/js/page-orphanages.js"></script>
+</body>
+
 </html>
