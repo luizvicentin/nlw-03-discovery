@@ -6,7 +6,9 @@ const pages = require('./pages.js')
 // initiating the express 
 const server = express() 
 server
-//using static files
+// use body of req
+.use(express.urlencoded({ extended: true}))
+// use static files
 .use(express.static('assets'))
 
 // configure template engine
@@ -18,6 +20,7 @@ server
 .get('/orphanage', pages.orphanage) 
 .get('/orphanages', pages.orphanages) 
 .get('/create-orphanage', pages.createOrphanage) 
+.post('/save-orphanage', pages.save-orphanage)
 
 // connect a route
 server.listen(5500)
