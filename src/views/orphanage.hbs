@@ -17,7 +17,7 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
-    <title>Orf. Esperança | Happy</title>
+    <title>{{ orphanage.name }} | Happy</title>
     <link rel="icon" href="/img/logo-icon.png" />
   </head>
 
@@ -62,8 +62,10 @@
           </div>
 
           <div class="orphanage-details-content">
-            <h1>Orf. Esperança</h1>
+            <h1>{{ orphanage.name }}</h1>
             <p>
+              {{orphanage.images}}
+
               Presta assistência a crianças de 06 a 15 anos que se encontre em
               situação de risco e/ou vulnerabilidade social.
             </p>
