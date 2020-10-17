@@ -13,8 +13,15 @@ module.exports = {
       const results = await db.all(`SELECT * FROM orphanages WHERE id = "${id}" `)
       const orphanage = results[0]
 
-      orphanage.images = orphanage.images.split()
-      
+      orphanage.firstImage = orphanage.images[0]
+      orphanage.images = orphanage.images.split(',')
+
+      if(orphanage.open_on_weekends == '0') {
+          orphanage.open_on_weekends = false
+      } else {
+          orphanage.open_on_weekends= true
+      }
+
       return res.render('orphanage', { orphanage })
     } catch (error) {
         console.log(error)
